@@ -23,7 +23,7 @@ void Forno::aggiorna() {
 void Forno::accendi() { _stato = ACCESO; }
 void Forno::spento() { _stato = SPENTO; }
 
-Stato Forno::stato() { return _stato; }
+bool Forno::stato() { return _stato == ACCESO; }
 
 void Forno::impostaPotenzaPercentuale(double potenza) {
     _potenzaPercentuale = fmin(fmax(_potenza, 0.0), 100.0) / 100.0;
