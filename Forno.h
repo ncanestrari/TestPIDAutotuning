@@ -10,13 +10,16 @@
 
 #include "Arduino.h"
 
-class Forno {
-    enum statoForno {
-        SPENTO,
-        ACCESO
-    };
+enum statoForno {
+    SPENTO,
+    ACCESO
+};
 
-    double _temperatura;
+
+class Forno {
+    const _max_temp = 300.0;
+    const _min_temp = 20.0;
+    double _temperatura = 0.0;
     double _potenzaPercentuale;  //potenza del forno settata (in futuro dinamicamente dal PID)
     double _riscaldamento;       //variazione temperatura causata dall'azione di riscaldamento
     double _raffreddamento;      // variazione temperatura causata dall'azione di raffreddamento
