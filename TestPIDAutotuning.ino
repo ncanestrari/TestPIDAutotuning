@@ -1,7 +1,6 @@
 #include "forno.h"
 
 
-
 Forno mioForno (0.01,0.002);
 
 //   ******* SETUP *******
