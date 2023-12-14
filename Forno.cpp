@@ -16,8 +16,8 @@ void Forno::aggiorna() {
     _temperatura = _riscaldamento - _raffreddamento;
 
     //clippo valori di uscita tra 20°C e 300°C
-    _temperatura = (_temperatura > 300.0) ? 300.0 : _temperatura;
-    _temperatura = (_temperatura < 20.0) ? 20.0 : _temperatura;
+    _temperatura = (_temperatura > _max_temp) ? _max_temp : _temperatura;
+    _temperatura = (_temperatura < _min_temp) ? _min_temp : _temperatura;
 }
 
 void Forno::accendi() { _stato = ACCESO; }
