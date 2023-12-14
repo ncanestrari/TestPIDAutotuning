@@ -12,7 +12,7 @@ void Forno::aggiorna() {
         _riscaldamento = 100.0 * _potenzaPercentuale * (1 - exp(-_tassoRiscaldamento * millis() / 1000.0));
     }
     // Simulo il raffreddamento con una funzione logistica. Il raffreddamento è legato alla temperatura. Maggiore temperatura significa maggior raffreddamento
-    _raffreddamento = 100.0 * exp(-_tassoRaffreddamento * millis() / 1000.0)* (_temperatura / 100.0);
+    _raffreddamento = 100.0 * exp(-_tassoRaffreddamento * millis() / 1000.0) * (_temperatura / 100.0);
     _temperatura = _riscaldamento - _raffreddamento;
 
     //clippo valori di uscita tra 20°C e 300°C
@@ -23,7 +23,7 @@ void Forno::aggiorna() {
 void Forno::accendi() { _stato = ACCESO; }
 void Forno::spento() { _stato = SPENTO; }
 
-Forno::statoForno Forno::stato() { return _stato; }
+Stato Forno::stato() { return _stato; }
 
 void Forno::impostaPotenzaPercentuale(double potenza) {
     _potenzaPercentuale = fmin(fmax(_potenza, 0.0), 100.0) / 100.0;
