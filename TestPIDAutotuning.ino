@@ -4,14 +4,14 @@
 
 Forno mioForno (0.01,0.002);
 
-
+//   ******* SETUP *******
 void setup()
 {
 
 
 }
 
-
+//   ******* LOOP *******
 void loop()
 {
     mioForno.aggiorna();

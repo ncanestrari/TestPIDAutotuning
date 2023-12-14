@@ -3,7 +3,7 @@
 #include "Arduino.h"
 
 class Forno {
-
+    //attenzione. La struttura dell'enum va dichiarata prima di dichiarare una variabile di questo tipo, altrimenti giustamente impazzisce.
     public:
         enum statoForno {
             ACCESO,
@@ -18,20 +18,15 @@ class Forno {
         double tassoRiscaldamento;
         double tassoRaffreddamento;
         statoForno stato;
-        
-
 
     public:
         Forno( double tassoRiscaldamento, double tassoRaffreddamento );
         void aggiorna();
-        void riscalda(double potenzaPercentuale);
         void raffredda();
         double ottieniTemperatura();
         statoForno ottieniStato();
         void impostaStato(statoForno nuovoStato);
-        
-
-        
+        void impostaPotenzaPercentuale(double potenza);   
         
 };
 
