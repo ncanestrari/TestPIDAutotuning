@@ -10,12 +10,12 @@
 
 #include "Arduino.h"
 
-enum Stato {
-    SPENTO,
-    ACCESO
-};
-
 class Forno {
+    enum Stato {
+        SPENTO,
+        ACCESO
+    };
+
     const double _max_temp = 300.0;
     const double _min_temp = 20.0;
     double _temperatura = 20.0;
@@ -30,7 +30,7 @@ public:
     Forno(double tassoRiscaldamento, double tassoRaffreddamento);  // costruttore
     void aggiorna();                                               // aggiorna la temperatura del forno
     double temperatura();                                          // metodo per ottenere la temperatura attuale del forno
-    Stato stato();                                                 // metodo per ottenere lo stato (acceso/spento) del forno
+    bool acceso();                                                 // metodo che informa se il forno e' acceso
     void accendi();                                                // metodo per accendere il forno
     void spegni();                                                 // metodo per spegnere il forno
     void impostaPotenzaPercentuale(double potenza);                // metodo che imposta la potenza di riscaldamento del forno
